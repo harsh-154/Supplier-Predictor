@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { runPipeline, getBestSuppliers } from "./api";
 import SupplierTable from "./components/SupplierTable";
-import DashboardView from "./components/DashboardView"; // New component
-import MapView from "./components/MapView"; // New component
+import DashboardView from "./components/DashboardView";
+import MapView from "./components/MapView";
 
 function App() {
   const [bestSuppliers, setBestSuppliers] = useState([]);
@@ -10,15 +10,28 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [viewMode, setViewMode] = useState("table"); // 'table', 'dashboard', 'map'
-  const [showBest, setShowBest] = useState(true); // Moved this state to top-level
+  const [showBest, setShowBest] = useState(true);
+  const [selectedDcCity, setSelectedDcCity] = useState(""); // State for selected DC city
+  const [uniqueCities, setUniqueCities] = useState([]); // State for unique cities from backend
 
-  const fetchSuppliers = async () => {
+  const fetchSuppliers = async (city = selectedDcCity) => {
     setLoading(true);
     setMessage("Fetching supplier data...");
     try {
-      const { data } = await getBestSuppliers();
+      const { data } = await getBestSuppliers(city); // Pass selected city to API
       setBestSuppliers(data.best_suppliers);
       setAllSuppliers(data.all_suppliers);
+      setUniqueCities(data.unique_cities); // Set unique cities
+
+      // If no city was selected yet, default to the first one from the fetched list
+      // This ensures a default city is always selected in the dropdown
+      if (!city && data.unique_cities.length > 0) {
+        setSelectedDcCity(data.unique_cities[0]);
+      } else if (city && !data.unique_cities.includes(city)) {
+        // If the previously selected city is no longer in the list (e.g., after pipeline run with new data)
+        // default to the first available city.
+        setSelectedDcCity(data.unique_cities[0] || "");
+      }
       setMessage("Supplier data loaded successfully.");
     } catch (error) {
       console.error("Error fetching suppliers:", error);
@@ -34,7 +47,9 @@ function App() {
     try {
       await runPipeline();
       setMessage("Pipeline complete. Fetching updated supplier data...");
-      await fetchSuppliers();
+      // After pipeline runs, re-fetch data, which will also update uniqueCities
+      // and potentially reset selectedDcCity if the previous one is no longer valid.
+      await fetchSuppliers(selectedDcCity);
     } catch (error) {
       console.error("Error running pipeline:", error);
       setMessage("Failed to run pipeline. Check backend logs.");
@@ -44,12 +59,23 @@ function App() {
   };
 
   useEffect(() => {
+    // Initial data fetch when the component mounts
     fetchSuppliers();
   }, []);
 
+  // Effect to re-fetch suppliers when selectedDcCity changes
+  // This ensures the table and map update when a new warehouse city is chosen
+  useEffect(() => {
+    // Only refetch if a city is actually selected and it's different from the current one
+    // This prevents infinite loops or unnecessary fetches on initial load
+    if (selectedDcCity && uniqueCities.length > 0) {
+      fetchSuppliers(selectedDcCity);
+    }
+  }, [selectedDcCity]); // Dependency array includes selectedDcCity
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 p-4 flex flex-col items-center justify-center font-inter">
-      <div className="bg-gray-800 p-8 rounded-lg shadow-2xl w-full max-w-5xl"> {/* Increased max-w */}
+      <div className="bg-gray-800 p-8 rounded-lg shadow-2xl w-full max-w-5xl">
         <h1 className="text-4xl font-bold mb-6 text-blue-400 flex items-center justify-center">
           <span className="mr-3">📦</span> Supply Chain Resilience Dashboard
         </h1>
@@ -105,6 +131,30 @@ function App() {
           </button>
         </div>
 
+        {/* Warehouse City Dropdown */}
+        <div className="mb-6 flex justify-center items-center gap-3">
+          <label htmlFor="dc-city-select" className="text-lg text-gray-300">
+            Select Warehouse City:
+          </label>
+          <select
+            id="dc-city-select"
+            value={selectedDcCity}
+            onChange={(e) => setSelectedDcCity(e.target.value)}
+            className="p-2 rounded-md bg-gray-700 border border-gray-600 text-white text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            disabled={loading || uniqueCities.length === 0}
+          >
+            {uniqueCities.length > 0 ? (
+              uniqueCities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))
+            ) : (
+              <option value="">No cities available</option>
+            )}
+          </select>
+        </div>
+
         {message && (
           <p className="text-sm text-gray-400 mb-4">{message}</p>
         )}
@@ -118,7 +168,6 @@ function App() {
                 <h2 className="text-2xl font-semibold text-blue-300 mt-4">
                   {showBest ? "🏆 Best Suppliers by Product" : "📊 All Suppliers"}
                 </h2>
-                {/* Table-specific toggle buttons, now correctly within the table view */}
                 <div className="flex justify-center gap-2 mb-4">
                   <button
                     onClick={() => setShowBest(true)}
@@ -146,7 +195,7 @@ function App() {
             )}
 
             {viewMode === "map" && (
-              <MapView suppliers={allSuppliers} />
+              <MapView suppliers={allSuppliers} selectedDcCity={selectedDcCity} />
             )}
           </>
         )}

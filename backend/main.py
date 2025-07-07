@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pipeline import run_pipeline, get_best_suppliers
 
@@ -17,5 +17,8 @@ def run():
     return {"message": "Pipeline complete."}
 
 @app.get("/best-suppliers")
-def best_suppliers():
-    return get_best_suppliers()
+def best_suppliers(dc_city: str = Query(None, description="City of the distribution center")):
+    """
+    Returns best suppliers and all suppliers data, optionally filtered by a distribution center city.
+    """
+    return get_best_suppliers(dc_city=dc_city)

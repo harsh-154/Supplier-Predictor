@@ -12,12 +12,17 @@ export default function DashboardView({ suppliers }) {
 
   // Calculate some aggregate statistics
   const totalSuppliers = suppliers.length;
-  const totalProducts = new Set(suppliers.map(s => s.Product)).size;
+  const uniqueProducts = new Set(suppliers.map(s => s.Product)).size; // Using 'Product' from pipeline
+  const uniqueCategories = new Set(suppliers.map(s => s.Category)).size; // New metric
   const avgFailureProb = (suppliers.reduce((sum, s) => sum + (s.FailureProb || 0), 0) / totalSuppliers).toFixed(2);
   const avgDistance = (suppliers.reduce((sum, s) => sum + (s.DistanceKM || 0), 0) / totalSuppliers).toFixed(1);
   const avgCombinedScore = (suppliers.reduce((sum, s) => sum + (s.CombinedScore || 0), 0) / totalSuppliers).toFixed(3);
 
-  // You can add more complex charts/graphs here using libraries like Recharts or D3.js
+  // Count suppliers by category
+  const suppliersByCategory = suppliers.reduce((acc, s) => {
+    acc[s.Category] = (acc[s.Category] || 0) + 1;
+    return acc;
+  }, {});
 
   return (
     <div className="bg-gray-700 p-6 rounded-lg shadow-xl mt-6">
@@ -29,7 +34,11 @@ export default function DashboardView({ suppliers }) {
         </div>
         <div className="bg-gray-600 p-5 rounded-lg shadow-md flex flex-col items-center">
           <p className="text-sm text-gray-300">Unique Products</p>
-          <p className="text-4xl font-bold text-yellow-400 mt-2">{totalProducts}</p>
+          <p className="text-4xl font-bold text-yellow-400 mt-2">{uniqueProducts}</p>
+        </div>
+        <div className="bg-gray-600 p-5 rounded-lg shadow-md flex flex-col items-center">
+          <p className="text-sm text-gray-300">Unique Categories</p>
+          <p className="text-4xl font-bold text-purple-400 mt-2">{uniqueCategories}</p>
         </div>
         <div className="bg-gray-600 p-5 rounded-lg shadow-md flex flex-col items-center">
           <p className="text-sm text-gray-300">Avg. Failure Probability</p>
@@ -37,13 +46,24 @@ export default function DashboardView({ suppliers }) {
         </div>
         <div className="bg-gray-600 p-5 rounded-lg shadow-md flex flex-col items-center">
           <p className="text-sm text-gray-300">Avg. Distance (KM)</p>
-          <p className="text-4xl font-bold text-purple-400 mt-2">{avgDistance}</p>
+          <p className="text-4xl font-bold text-teal-400 mt-2">{avgDistance}</p>
         </div>
         <div className="bg-gray-600 p-5 rounded-lg shadow-md flex flex-col items-center">
           <p className="text-sm text-gray-300">Avg. Combined Score</p>
-          <p className="text-4xl font-bold text-teal-400 mt-2">{avgCombinedScore}</p>
+          <p className="text-4xl font-bold text-orange-400 mt-2">{avgCombinedScore}</p>
         </div>
-        {/* Add more dashboard elements here */}
+      </div>
+
+      <div className="mt-8">
+        <h3 className="text-2xl font-semibold text-blue-300 mb-4 text-center">Suppliers by Category</h3>
+        <div className="flex flex-wrap justify-center gap-4">
+          {Object.entries(suppliersByCategory).map(([category, count]) => (
+            <div key={category} className="bg-gray-600 p-4 rounded-lg shadow-md flex-1 min-w-[150px] max-w-[200px] text-center">
+              <p className="text-lg text-gray-300">{category}</p>
+              <p className="text-3xl font-bold text-green-300 mt-1">{count}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
