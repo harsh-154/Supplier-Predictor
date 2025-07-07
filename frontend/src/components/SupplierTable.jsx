@@ -22,8 +22,15 @@ export default function SupplierTable({ suppliers }) {
             <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Category</th>
             <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">City</th>
             <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Country</th>
-            <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Combined Score</th>
+            <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Lead Time (Days)</th>
+            <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Reliability</th>
+            <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Capacity</th>
+            {/* New Columns for Weather Risk and War Risk */}
+            <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Weather Risk</th>
+            <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">War Risk</th>
+            {/* End New Columns */}
             <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Failure Prob</th>
+            <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Combined Score</th>
             <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider rounded-tr-lg">Distance (km)</th>
           </tr>
         </thead>
@@ -37,9 +44,16 @@ export default function SupplierTable({ suppliers }) {
               <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-300">{s.Category}</td>
               <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-300">{s.City}</td>
               <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-300">{s.Country}</td>
-              <td className="px-4 py-4 whitespace-nowrap text-sm text-yellow-300">{s.CombinedScore?.toFixed(3)}</td>
-              <td className="px-4 py-4 whitespace-nowrap text-sm text-red-300">{s.FailureProb?.toFixed(2)}</td>
-              <td className="px-4 py-4 whitespace-nowrap text-sm text-green-300">{s.DistanceKM?.toFixed(1)}</td>
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-yellow-300">{s.LeadTimeDays}</td>
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-green-300">{s.PastReliability?.toFixed(2)}</td>
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-purple-300">{s.Capacity}</td>
+              {/* New Data Cells for Weather Risk and War Risk */}
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-orange-300">{s.WeatherRisk?.toFixed(2)}</td>
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-red-300">{s.WarRisk?.toFixed(2)}</td>
+              {/* End New Data Cells */}
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-red-400">{s.FailureProb?.toFixed(2)}</td>
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-teal-400">{s.CombinedScore?.toFixed(3)}</td>
+              <td className="px-4 py-4 whitespace-nowrap text-sm text-blue-400">{s.DistanceKM?.toFixed(1)}</td>
             </tr>
           ))}
         </tbody>

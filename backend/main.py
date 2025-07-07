@@ -18,7 +18,5 @@ def run():
 
 @app.get("/best-suppliers")
 def best_suppliers(dc_city: str = Query(None, description="City of the distribution center")):
-    """
-    Returns best suppliers and all suppliers data, optionally filtered by a distribution center city.
-    """
+    # ... your existing logic to handle dc_city ...
     return get_best_suppliers(dc_city=dc_city)

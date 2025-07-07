@@ -1,100 +1,100 @@
 SupplierID,SupplierName,ProductID,ProductName,Category,City,Country,Latitude,Longitude,LeadTimeDays,PastReliability,Capacity
-S0000,"Rodriguez, Figueroa and Sanchez",P2824,Camera,Electronics,Frankfurt,Germany,50.1109,8.6821,13,0.77,242
-S0001,Doyle Ltd,P2679,Camera,Appliances,Frankfurt,Germany,50.1109,8.6821,7,0.87,132
+S0000,"Rodriguez, Figueroa and Sanchez",P2824,Camera,Electronics,Bangalore,India,50.1109,8.6821,13,0.77,242
+S0001,Doyle Ltd,P2679,Camera,Appliances,Mumbai,India,50.1109,8.6821,7,0.87,132
 S0002,"Mcclain, Miller and Henderson",P2535,Smartphone,Electronics,Hyderabad,India,17.385,78.4867,5,0.86,833
 S0003,Davis and Sons,P9928,Camera,Networking,Hyderabad,India,17.385,78.4867,19,0.87,928
-S0004,"Guzman, Hoffman and Baldwin",P3615,Smartphone,Appliances,Beijing,China,39.9042,116.4074,15,0.78,320
-S0005,"Gardner, Robinson and Lawrence",P2674,Television,Electronics,Beijing,China,39.9042,116.4074,8,0.8,452
-S0006,Blake and Sons,P5333,Router,Electronics,Frankfurt,Germany,50.1109,8.6821,19,0.86,487
-S0007,"Henderson, Ramirez and Lewis",P5803,Smartphone,Appliances,Los Angeles,USA,34.0522,-118.2437,16,0.87,821
+S0004,"Guzman, Hoffman and Baldwin",P3615,Smartphone,Appliances,Hyderabad,India,39.9042,116.4074,15,0.78,320
+S0005,"Gardner, Robinson and Lawrence",P2674,Television,Electronics,Ahmedabad,India,39.9042,116.4074,8,0.8,452
+S0006,Blake and Sons,P5333,Router,Electronics,Bangalore,India,50.1109,8.6821,19,0.86,487
+S0007,"Henderson, Ramirez and Lewis",P5803,Smartphone,Appliances,Mumbai,India,34.0522,-118.2437,16,0.87,821
 S0008,Garcia-James,P1750,Smartphone,Appliances,Hyderabad,India,17.385,78.4867,14,0.99,975
 S0009,Abbott-Munoz,P2654,Laptop,Networking,Ahmedabad,India,23.0225,72.5714,19,0.88,473
 S0010,Blair PLC,P7065,Laptop,Networking,Hyderabad,India,17.385,78.4867,13,0.9,799
-S0011,Dudley Group,P2169,Camera,Appliances,Berlin,Germany,52.52,13.405,10,0.85,350
+S0011,Dudley Group,P2169,Camera,Appliances,Ahmedabad,India,52.52,13.405,10,0.85,350
 S0012,Arnold Ltd,P8573,Laptop,Networking,Ahmedabad,India,23.0225,72.5714,12,0.9,963
-S0013,"Mcclure, Ward and Lee",P4752,Smartphone,Electronics,São Paulo,Brazil,-23.5505,-46.6333,15,0.82,167
-S0014,Williams and Sons,P6155,Laptop,Electronics,Berlin,Germany,52.52,13.405,20,0.81,758
+S0013,"Mcclure, Ward and Lee",P4752,Smartphone,Electronics,Delhi,India,-23.5505,-46.6333,15,0.82,167
+S0014,Williams and Sons,P6155,Laptop,Electronics,Delhi,India,52.52,13.405,20,0.81,758
 S0015,Galloway-Wyatt,P3340,Tablet,Networking,Bangalore,India,12.9716,77.5946,12,0.92,651
-S0016,James Group,P8019,Television,Appliances,Beijing,China,39.9042,116.4074,16,0.76,241
-S0017,"Flowers, Martin and Kelly",P9085,Router,Electronics,São Paulo,Brazil,-23.5505,-46.6333,6,0.95,256
-S0018,"Adams, Zuniga and Wong",P3621,Camera,Appliances,Beijing,China,39.9042,116.4074,7,0.81,710
-S0019,"Reid, Ferguson and Sanchez",P9669,Tablet,Networking,Chicago,USA,41.8781,-87.6298,5,0.9,217
-S0020,Gray-Mayo,P9797,Camera,Networking,São Paulo,Brazil,-23.5505,-46.6333,15,0.73,545
-S0021,"Watts, Robinson and Nguyen",P8433,Laptop,Electronics,Frankfurt,Germany,50.1109,8.6821,13,0.98,880
-S0022,Perez Inc,P9317,Laptop,Electronics,Brasília,Brazil,-15.7939,-47.8828,14,0.94,619
-S0023,Morales-Jones,P4258,Router,Electronics,Shanghai,China,31.2304,121.4737,10,0.86,897
-S0024,"Walter, Edwards and Rios",P1009,Router,Appliances,Shanghai,China,31.2304,121.4737,20,0.71,471
+S0016,James Group,P8019,Television,Appliances,Ahmedabad,India,39.9042,116.4074,16,0.76,241
+S0017,"Flowers, Martin and Kelly",P9085,Router,Electronics,Delhi,India,-23.5505,-46.6333,6,0.95,256
+S0018,"Adams, Zuniga and Wong",P3621,Camera,Appliances,Mumbai,India,39.9042,116.4074,7,0.81,710
+S0019,"Reid, Ferguson and Sanchez",P9669,Tablet,Networking,Bangalore,India,41.8781,-87.6298,5,0.9,217
+S0020,Gray-Mayo,P9797,Camera,Networking,Hyderabad,India,-23.5505,-46.6333,15,0.73,545
+S0021,"Watts, Robinson and Nguyen",P8433,Laptop,Electronics,Hyderabad,India,50.1109,8.6821,13,0.98,880
+S0022,Perez Inc,P9317,Laptop,Electronics,Hyderabad,India,-15.7939,-47.8828,14,0.94,619
+S0023,Morales-Jones,P4258,Router,Electronics,Bangalore,India,31.2304,121.4737,10,0.86,897
+S0024,"Walter, Edwards and Rios",P1009,Router,Appliances,Ahmedabad,India,31.2304,121.4737,20,0.71,471
 S0025,Wilkerson-Day,P4923,Television,Electronics,Hyderabad,India,17.385,78.4867,7,0.72,597
 S0026,Baker and Sons,P9727,Smartphone,Electronics,Bangalore,India,12.9716,77.5946,20,0.97,269
-S0027,"Hoffman, Baker and Richards",P9645,Television,Appliances,Beijing,China,39.9042,116.4074,11,0.97,873
+S0027,"Hoffman, Baker and Richards",P9645,Television,Appliances,Delhi,India,39.9042,116.4074,11,0.97,873
 S0028,"Ross, Robinson and Bright",P4295,Camera,Appliances,Ahmedabad,India,23.0225,72.5714,17,0.99,765
-S0029,"Snyder, Campos and Callahan",P8177,Television,Appliances,New York,USA,40.7128,-74.006,8,0.77,165
-S0030,Burton Ltd,P1344,Television,Appliances,Chicago,USA,41.8781,-87.6298,12,0.87,107
+S0029,"Snyder, Campos and Callahan",P8177,Television,Appliances,Mumbai,India,40.7128,-74.006,8,0.77,165
+S0030,Burton Ltd,P1344,Television,Appliances,Delhi,India,41.8781,-87.6298,12,0.87,107
 S0031,Carlson-Cruz,P1964,Smartphone,Electronics,Delhi,India,28.6139,77.209,6,0.95,172
-S0032,"Ferrell, Rice and Maddox",P4899,Router,Networking,Berlin,Germany,52.52,13.405,20,0.76,235
-S0033,Frazier Inc,P8744,Camera,Electronics,São Paulo,Brazil,-23.5505,-46.6333,20,0.93,294
-S0034,"Dyer, Potter and Mack",P2588,Smartphone,Appliances,Beijing,China,39.9042,116.4074,16,0.82,578
-S0035,Rodriguez-Graham,P1887,Camera,Appliances,Berlin,Germany,52.52,13.405,8,0.72,845
+S0032,"Ferrell, Rice and Maddox",P4899,Router,Networking,Bangalore,India,52.52,13.405,20,0.76,235
+S0033,Frazier Inc,P8744,Camera,Electronics,Delhi,India,-23.5505,-46.6333,20,0.93,294
+S0034,"Dyer, Potter and Mack",P2588,Smartphone,Appliances,Hyderabad,India,39.9042,116.4074,16,0.82,578
+S0035,Rodriguez-Graham,P1887,Camera,Appliances,Delhi,India,52.52,13.405,8,0.72,845
 S0036,Smith-Bowen,P2790,Television,Electronics,Hyderabad,India,17.385,78.4867,11,0.86,243
-S0037,"Baker, Mason and White",P4006,Tablet,Networking,New York,USA,40.7128,-74.006,12,0.95,177
-S0038,Harrell LLC,P2604,Tablet,Electronics,Berlin,Germany,52.52,13.405,5,0.98,871
-S0039,"Romero, Gonzalez and Brooks",P3724,Laptop,Networking,New York,USA,40.7128,-74.006,20,0.76,510
+S0037,"Baker, Mason and White",P4006,Tablet,Networking,Hyderabad,India,40.7128,-74.006,12,0.95,177
+S0038,Harrell LLC,P2604,Tablet,Electronics,Bangalore,India,52.52,13.405,5,0.98,871
+S0039,"Romero, Gonzalez and Brooks",P3724,Laptop,Networking,Delhi,India,40.7128,-74.006,20,0.76,510
 S0040,Ryan PLC,P3697,Smartphone,Networking,Mumbai,India,19.076,72.8777,17,0.78,902
-S0041,George Group,P5673,Tablet,Networking,Frankfurt,Germany,50.1109,8.6821,20,0.74,403
-S0042,Rodriguez LLC,P1958,Laptop,Appliances,Frankfurt,Germany,50.1109,8.6821,6,0.92,158
-S0043,Allen-Allen,P8811,Smartphone,Appliances,Brasília,Brazil,-15.7939,-47.8828,10,0.72,620
-S0044,"Arroyo, Miller and Tucker",P4044,Smartphone,Electronics,Los Angeles,USA,34.0522,-118.2437,7,0.9,340
+S0041,George Group,P5673,Tablet,Networking,Hyderabad,India,50.1109,8.6821,20,0.74,403
+S0042,Rodriguez LLC,P1958,Laptop,Appliances,Hyderabad,India,50.1109,8.6821,6,0.92,158
+S0043,Allen-Allen,P8811,Smartphone,Appliances,Hyderabad,India,-15.7939,-47.8828,10,0.72,620
+S0044,"Arroyo, Miller and Tucker",P4044,Smartphone,Electronics,Delhi,India,34.0522,-118.2437,7,0.9,340
 S0045,Spence PLC,P2964,Tablet,Appliances,Hyderabad,India,17.385,78.4867,6,0.88,529
 S0046,Anderson Group,P9565,Camera,Networking,Ahmedabad,India,23.0225,72.5714,11,0.89,421
 S0047,"Martin, Rose and Obrien",P5351,Laptop,Networking,Bangalore,India,12.9716,77.5946,14,0.83,869
-S0048,Hickman Ltd,P1152,Smartphone,Networking,Los Angeles,USA,34.0522,-118.2437,8,0.72,318
-S0049,"Harris, Collins and Carney",P5345,Router,Electronics,Shanghai,China,31.2304,121.4737,7,0.95,478
-S0050,"Brooks, Lam and Hayes",P3584,Television,Networking,Brasília,Brazil,-15.7939,-47.8828,14,0.88,926
-S0051,Walker LLC,P9666,Camera,Electronics,Berlin,Germany,52.52,13.405,14,0.97,206
+S0048,Hickman Ltd,P1152,Smartphone,Networking,Ahmedabad,India,34.0522,-118.2437,8,0.72,318
+S0049,"Harris, Collins and Carney",P5345,Router,Electronics,Mumbai,India,31.2304,121.4737,7,0.95,478
+S0050,"Brooks, Lam and Hayes",P3584,Television,Networking,Ahmedabad,India,-15.7939,-47.8828,14,0.88,926
+S0051,Walker LLC,P9666,Camera,Electronics,Ahmedabad,India,52.52,13.405,14,0.97,206
 S0052,Chapman and Sons,P5333,Laptop,Electronics,Delhi,India,28.6139,77.209,9,0.78,719
-S0053,"Robinson, Jones and Welch",P6617,Laptop,Electronics,Berlin,Germany,52.52,13.405,13,0.85,357
-S0054,Jones Inc,P2512,Smartphone,Appliances,Beijing,China,39.9042,116.4074,13,0.71,441
-S0055,Jones-Young,P5291,Laptop,Electronics,Frankfurt,Germany,50.1109,8.6821,19,0.86,537
+S0053,"Robinson, Jones and Welch",P6617,Laptop,Electronics,Mumbai,India,52.52,13.405,13,0.85,357
+S0054,Jones Inc,P2512,Smartphone,Appliances,Ahmedabad,India,39.9042,116.4074,13,0.71,441
+S0055,Jones-Young,P5291,Laptop,Electronics,Mumbai,India,50.1109,8.6821,19,0.86,537
 S0056,"Washington, Ryan and Cummings",P1158,Router,Electronics,Delhi,India,28.6139,77.209,9,0.86,954
 S0057,"Johnston, Sanchez and Kennedy",P3426,Television,Networking,Bangalore,India,12.9716,77.5946,6,0.79,915
-S0058,Lee-Davis,P6862,Smartphone,Electronics,Berlin,Germany,52.52,13.405,12,0.89,462
-S0059,Gomez-Jenkins,P7658,Router,Appliances,Frankfurt,Germany,50.1109,8.6821,9,0.97,342
+S0058,Lee-Davis,P6862,Smartphone,Electronics,Delhi,India,52.52,13.405,12,0.89,462
+S0059,Gomez-Jenkins,P7658,Router,Appliances,Hyderabad,India,50.1109,8.6821,9,0.97,342
 S0060,"Brown, Valdez and Lucas",P3900,Laptop,Networking,Mumbai,India,19.076,72.8777,10,0.91,440
 S0061,Powell LLC,P5065,Tablet,Networking,Bangalore,India,12.9716,77.5946,8,0.81,139
-S0062,Wright and Sons,P4644,Tablet,Electronics,Brasília,Brazil,-15.7939,-47.8828,19,0.8,940
-S0063,"West, Henderson and Ramirez",P4652,Laptop,Electronics,Berlin,Germany,52.52,13.405,11,0.82,385
-S0064,Baxter Inc,P5573,Smartphone,Networking,Berlin,Germany,52.52,13.405,17,0.9,963
+S0062,Wright and Sons,P4644,Tablet,Electronics,Hyderabad,India,-15.7939,-47.8828,19,0.8,940
+S0063,"West, Henderson and Ramirez",P4652,Laptop,Electronics,Bangalore,India,52.52,13.405,11,0.82,385
+S0064,Baxter Inc,P5573,Smartphone,Networking,Mumbai,India,52.52,13.405,17,0.9,963
 S0065,Morton-Chase,P6425,Router,Electronics,Delhi,India,28.6139,77.209,13,0.75,371
-S0066,Williams PLC,P2776,Smartphone,Appliances,Beijing,China,39.9042,116.4074,16,0.91,421
-S0067,Novak and Sons,P9379,Tablet,Electronics,Beijing,China,39.9042,116.4074,11,0.77,825
-S0068,Russell Group,P1027,Tablet,Appliances,São Paulo,Brazil,-23.5505,-46.6333,11,0.81,171
-S0069,Hancock Inc,P6409,Camera,Appliances,Shanghai,China,31.2304,121.4737,8,0.91,407
-S0070,Gray Group,P6067,Router,Appliances,Beijing,China,39.9042,116.4074,15,0.82,402
-S0071,House-Glover,P3085,Router,Electronics,Beijing,China,39.9042,116.4074,17,0.9,278
-S0072,Henderson-Bernard,P5930,Router,Networking,Chicago,USA,41.8781,-87.6298,5,0.79,315
-S0073,"Stanley, Tucker and Lee",P6279,Tablet,Networking,New York,USA,40.7128,-74.006,19,0.9,623
+S0066,Williams PLC,P2776,Smartphone,Appliances,Delhi,India,39.9042,116.4074,16,0.91,421
+S0067,Novak and Sons,P9379,Tablet,Electronics,Mumbai,India,39.9042,116.4074,11,0.77,825
+S0068,Russell Group,P1027,Tablet,Appliances,Ahmedabad,India,-23.5505,-46.6333,11,0.81,171
+S0069,Hancock Inc,P6409,Camera,Appliances,Bangalore,India,31.2304,121.4737,8,0.91,407
+S0070,Gray Group,P6067,Router,Appliances,Mumbai,India,39.9042,116.4074,15,0.82,402
+S0071,House-Glover,P3085,Router,Electronics,Delhi,India,39.9042,116.4074,17,0.9,278
+S0072,Henderson-Bernard,P5930,Router,Networking,Mumbai,India,41.8781,-87.6298,5,0.79,315
+S0073,"Stanley, Tucker and Lee",P6279,Tablet,Networking,Hyderabad,India,40.7128,-74.006,19,0.9,623
 S0074,Novak PLC,P3780,Tablet,Appliances,Delhi,India,28.6139,77.209,14,0.85,748
-S0075,"Daniels, Adkins and Brown",P6491,Router,Electronics,Brasília,Brazil,-15.7939,-47.8828,12,0.9,330
+S0075,"Daniels, Adkins and Brown",P6491,Router,Electronics,Delhi,India,-15.7939,-47.8828,12,0.9,330
 S0076,"Woods, Calhoun and Schmidt",P3414,Laptop,Electronics,Mumbai,India,19.076,72.8777,12,0.99,725
-S0077,Yu Inc,P8461,Smartphone,Networking,Berlin,Germany,52.52,13.405,11,0.91,493
+S0077,Yu Inc,P8461,Smartphone,Networking,Hyderabad,India,52.52,13.405,11,0.91,493
 S0078,Jones Inc,P7547,Tablet,Electronics,Bangalore,India,12.9716,77.5946,5,0.96,981
 S0079,"Hensley, Powell and David",P7965,Smartphone,Electronics,Bangalore,India,12.9716,77.5946,19,0.71,355
-S0080,"Sanchez, Wheeler and Harvey",P8478,Smartphone,Electronics,São Paulo,Brazil,-23.5505,-46.6333,19,0.89,672
-S0081,Sandoval-Cunningham,P6198,Router,Networking,Los Angeles,USA,34.0522,-118.2437,18,0.94,661
-S0082,Donovan-Harris,P3607,Tablet,Appliances,Brasília,Brazil,-15.7939,-47.8828,20,0.83,869
-S0083,"Edwards, Baker and Anderson",P5543,Laptop,Appliances,New York,USA,40.7128,-74.006,12,0.78,179
+S0080,"Sanchez, Wheeler and Harvey",P8478,Smartphone,Electronics,Mumbai,India,-23.5505,-46.6333,19,0.89,672
+S0081,Sandoval-Cunningham,P6198,Router,Networking,Ahmedabad,India,34.0522,-118.2437,18,0.94,661
+S0082,Donovan-Harris,P3607,Tablet,Appliances,Hyderabad,India,-15.7939,-47.8828,20,0.83,869
+S0083,"Edwards, Baker and Anderson",P5543,Laptop,Appliances,Ahmedabad,India,40.7128,-74.006,12,0.78,179
 S0084,"Evans, Stewart and Walton",P5681,Camera,Electronics,Ahmedabad,India,23.0225,72.5714,15,0.79,653
 S0085,Smith PLC,P3267,Smartphone,Electronics,Hyderabad,India,17.385,78.4867,17,0.9,823
-S0086,"Ferrell, Jones and Lewis",P2052,Laptop,Networking,Beijing,China,39.9042,116.4074,15,0.86,525
-S0087,Anderson-Bailey,P4388,Smartphone,Networking,Beijing,China,39.9042,116.4074,5,0.95,883
+S0086,"Ferrell, Jones and Lewis",P2052,Laptop,Networking,Bangalore,India,39.9042,116.4074,15,0.86,525
+S0087,Anderson-Bailey,P4388,Smartphone,Networking,Ahmedabad,India,39.9042,116.4074,5,0.95,883
 S0088,Suarez LLC,P7232,Router,Networking,Mumbai,India,19.076,72.8777,16,0.79,499
-S0089,Moore-Bass,P9818,Tablet,Appliances,Frankfurt,Germany,50.1109,8.6821,12,0.84,379
-S0090,"Turner, Riggs and Roman",P8956,Tablet,Electronics,Beijing,China,39.9042,116.4074,15,0.89,917
+S0089,Moore-Bass,P9818,Tablet,Appliances,Ahmedabad,India,50.1109,8.6821,12,0.84,379
+S0090,"Turner, Riggs and Roman",P8956,Tablet,Electronics,Hyderabad,India,39.9042,116.4074,15,0.89,917
 S0091,"Smith, Montoya and Evans",P3704,Tablet,Networking,Bangalore,India,12.9716,77.5946,5,0.96,706
-S0092,"Garcia, Humphrey and Baker",P1444,Router,Electronics,Berlin,Germany,52.52,13.405,18,0.74,572
-S0093,Newton and Sons,P1823,Laptop,Networking,Beijing,China,39.9042,116.4074,15,0.76,434
-S0094,Campbell-Clark,P7211,Television,Networking,São Paulo,Brazil,-23.5505,-46.6333,18,0.77,183
-S0095,Harris-Walters,P1317,Tablet,Appliances,Chicago,USA,41.8781,-87.6298,6,0.99,458
+S0092,"Garcia, Humphrey and Baker",P1444,Router,Electronics,Bangalore,India,52.52,13.405,18,0.74,572
+S0093,Newton and Sons,P1823,Laptop,Networking,Ahmedabad,India,39.9042,116.4074,15,0.76,434
+S0094,Campbell-Clark,P7211,Television,Networking,Mumbai,India,-23.5505,-46.6333,18,0.77,183
+S0095,Harris-Walters,P1317,Tablet,Appliances,Hyderabad,India,41.8781,-87.6298,6,0.99,458
 S0096,Wagner-King,P2124,Laptop,Appliances,Mumbai,India,19.076,72.8777,5,0.98,304
 S0097,Davis Group,P3496,Smartphone,Electronics,Bangalore,India,12.9716,77.5946,20,0.89,677
 S0098,Williams-Cook,P8619,Laptop,Appliances,Ahmedabad,India,23.0225,72.5714,16,0.75,721
