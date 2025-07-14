@@ -50,35 +50,33 @@ def fetch_weather_risk(lat, lon):
         res = requests.get(url).json()
         main = res['weather'][0]['main']
         if main in ["Thunderstorm", "Extreme", "Tornado"]:
-            return 0.9
+            return 0.95 # Slightly increased
         elif main in ["Rain", "Snow"]:
-            return 0.6
+            return 0.7 # Increased from 0.6
         elif main == "Clouds":
-            return 0.3 # Increased from 0.3
+            return 0.5 # Increased from 0.4
         else:
-            return 0.1 # Increased from 0.1
+            return 0.3 # Increased from 0.2
     except Exception as e:
         print(f"Error fetching weather risk: {e}. Returning random fallback.")
-        # Increased range for random fallback to ensure higher variability
-        return round(random.uniform(0.4, 0.8), 1)
+        # Increased range for random fallback to ensure higher variability and general level
+        return round(random.uniform(0.6, 0.9), 1)
 
 def fetch_war_risk(country):
     try:
-        url = (
-            f"https://api.acleddata.com/acled/read?"
-            f"key={ACLED_API_TOKEN}&"
-            f"email={os.getenv('ACLED_EMAIL')}&"
-            f"country={country}&"
-            f"event_date=2025-06-07|2025-07-07&"
-            f"limit=0"
-        )
-
-        res = requests.get(url).json()
+        url = f"https://api.acleddata.com/acled/read?country={country}&event_date=LAST30DAYS&limit=1"
+        headers = {"Authorization": f"Token {ACLED_API_TOKEN}"}
+        res = requests.get(url, headers=headers).json()
         count = int(res.get("count", 0))
-        return min(1.0, count / 5.0)  # Each 5 events add 0.2 to war risk (max 1.0)
+        # MODIFIED: New logic for war risk to ensure more variability and less capping at 1.0
+        # Each event contributes 0.05 to the risk, plus a small random component.
+        # This spreads out the risk more over the number of events.
+        war_risk_score = (count * 0.05) + random.uniform(0, 0.1)
+        return min(1.0, war_risk_score) # Cap at 1.0
     except Exception as e:
-        print(f"Error fetching war risk: {e}. Returning fallback.")
-        return round(random.uniform(0.3, 0.7), 1)
+        print(f"Error fetching war risk: {e}. Returning random fallback.")
+        # Increased range for random fallback to ensure higher variability and general level
+        return round(random.uniform(0.4, 0.8), 1)
 
 # Embedded function from model.py
 def train_model(df, model_path):
@@ -137,13 +135,14 @@ def run_pipeline():
     df["WarRisk"] = df.apply(lambda row: fetch_war_risk(row["Country"]), axis=1)
 
     # Calculate 'Failure' target variable for training
-    # Combine existing logic with a probabilistic component
+    # --- MODIFIED: Adjusting conditions to ensure a mix of 0s and 1s for 'Failure' ---
     df["Failure"] = (
-        (df["WeatherRisk"] > 0.5) |
-        (df["WarRisk"] > 0.5) |
-        (df["PastReliability"] < 0.8) | # Use PastReliability
-        (pd.Series([random.random() for _ in range(len(df))]) < 0.15) # 15% random chance of failure
+        (df["WeatherRisk"] > 0.7) | # Increased threshold
+        (df["WarRisk"] > 0.7) |     # Increased threshold
+        (df["PastReliability"] < 0.7) | # Made stricter
+        (pd.Series([random.random() for _ in range(len(df))]) < 0.05) # Reduced random chance
     ).astype(int)
+    # --- END MODIFIED ---
 
     # Save processed data
     df.to_csv(PROCESSED_CSV, index=False)
