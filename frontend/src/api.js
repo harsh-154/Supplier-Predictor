@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const API = axios.create({
-  baseURL: "https://your-service-name.onrender.com", // Replace with your actual Render backend URL
+  baseURL: "https://supplier-predictor.onrender.com", // Replace with your actual Render backend URL
 });
 
 export const runPipeline = () => API.get("/run-pipeline");
